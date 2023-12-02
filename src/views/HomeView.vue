@@ -1,23 +1,23 @@
 <template>
   <div class="home">
-    <!-- <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" /> -->
-    <div class="bg-blue-500">
-      <p class="text-white">
-        This is a Tailwind CSS component with custom styles.
-      </p>
+    <div class="flex items-center p-4">
+      <button class="bg-sky-500 p-4 text-white rounded" @click="throwErrorFunc">
+        Throw Error
+      </button>
     </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
 
 export default {
   name: "HomeView",
-  components: {
-    HelloWorld,
+  components: {},
+  methods: {
+    throwErrorFunc() {
+      throw new Error(`Sentry Error ${new Date()}`);
+    },
   },
 };
 </script>
